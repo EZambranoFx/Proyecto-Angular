@@ -24,10 +24,18 @@
               "src/favicon.ico",
               "src/assets"
             ],
+           
+
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+
+           
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
           },
           "configurations": {
             "production": {
@@ -94,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "aca594eb-7fca-4dea-8d3e-92df02f7ce68"
   }
 }

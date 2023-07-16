@@ -1,8 +1,8 @@
 <section class="page-section" id="services">
     <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">At Your Service</h2>
+        <h2 class="text-center mt-0">Pokemons (1ra Gen)</h2>
         <hr class="divider" />
-        <div class="row gx-4 gx-lg-5">
+        <!-- <div class="row gx-4 gx-lg-5">
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
                     <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
@@ -30,7 +30,17 @@
                     <h3 class="h4 mb-2">Made with Love</h3>
                     <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
                 </div>
-            </div>
-        </div>
+            </div> -->
+
+        <!-- Tabla con datos -->
+        <table  class="table">
+            <tbody>
+                <tr *ngFor="let datum of data">
+                    <th> {{ datum[ "id" ] }} </th>
+                    <td> {{ datum[ "name" ] }} </td>
+                    <td> {{ datum[ "num" ] }} </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </section>
+</section>

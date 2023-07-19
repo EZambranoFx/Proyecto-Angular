@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ServicioService } from './servicio.service';
+import { Interfaz } from '../interfaces/interfaz';
 
 describe('ServicioService', () => {
   let service: ServicioService;
@@ -8,7 +10,7 @@ describe('ServicioService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, HttpClientModule],
       providers: [ServicioService]
     });
     service = TestBed.inject(ServicioService);
@@ -32,7 +34,11 @@ describe('ServicioService', () => {
   });
 
   it('should return the response data', () => {
-    const responseData = { /* Coloca aquí los datos de respuesta esperados */ };
+    const responseData = [
+      { id: 1, name: 'Pikachu', num: '025' },
+      { id: 2, name: 'Charizard', num: '006' },
+      { id: 3, name: 'Bulbasaur', num: '001' },
+    ];
 
     service.getResponse().subscribe((data) => {
       expect(data).toEqual(responseData);
@@ -41,6 +47,13 @@ describe('ServicioService', () => {
     const httpRequest = httpMock.expectOne('');
     httpRequest.flush(responseData);
   });
+  it('getResponse should return value from observable',
+      (done: DoneFn) => {
+      service.getResponse().subscribe(data => {
+        expect((data as Interfaz[]).length).toBeGreaterThan(0)
+        done();
+      });
+    });
 
 
 });

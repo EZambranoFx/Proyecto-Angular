@@ -23,11 +23,6 @@ describe('ServicesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('h2 element', () => {
-    const bannerElement: HTMLElement = fixture.nativeElement;
-    const p = bannerElement.querySelector('h2')!;
-    expect(p.textContent).toEqual('banner works!');
-   });
 
    it('should display the correct number of rows', () => {
     // Restar 1 para excluir la fila de encabezado

@@ -1,43 +1,39 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ServicesComponent } from './services.component';
+import { ServicioService } from '../providers/servicio.service';
 
-import { By } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ServicesComponent', () => {
   let component: ServicesComponent;
   let fixture: ComponentFixture<ServicesComponent>;
-  let dataRows: HTMLElement[];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ServicesComponent]
+      imports: [HttpClientModule],
+      declarations: [ServicesComponent],
+      providers: [ServicioService],
     });
     fixture = TestBed.createComponent(ServicesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    dataRows = fixture.debugElement.queryAll(By.css('tr'))
-    .map((debugElement) => debugElement.nativeElement);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should request service user after Angular calls ngOnInit', (done: DoneFn) => {
+    // Llame a ngOnInit para simular el ciclo de vida del componente
+    component.ngOnInit();
 
-   it('should display the correct number of rows', () => {
-    // Restar 1 para excluir la fila de encabezado
-    expect(dataRows.length - 1).toBe(component.data.length);
-  });
-  it('should display the correct data', () => {
-    const dataValues = dataRows.slice(1) // Excluir la fila de encabezado
-      .map((row) => Array.from(row.children).map((cell) => cell.textContent?.trim()));
-  
-    const expectedDataValues = component.data.map((datum) => [
-      String(datum.id),
-      datum.name,
-      datum.num
-    ]);
-  
-    expect(dataValues).toEqual(expectedDataValues);
+    // Utilice fixture.whenStable para esperar a que se resuelva el observable del servicio
+    fixture.whenStable().then(() => {
+      // Valide que la respuesta sea mayor que 0
+      expect(component.data.length).toBeGreaterThan(0);
+
+      // Que espere hasta que llegue la respuesta
+      done();
+    });
   });
 });

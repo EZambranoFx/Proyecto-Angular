@@ -18,4 +18,10 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should render the correct copyright text', () => {
+    const compiled = fixture.nativeElement;
+    const copyrightText = compiled.querySelector('div.small.text-center.text-muted');
+    expect(copyrightText).toBeTruthy();
+    expect(copyrightText.textContent).toContain('Copyright © 2023 - Company Name');
+  });
 });

@@ -21,13 +21,13 @@ describe('NavigationComponent', () => {
   it('should render the correct navigation elements and links', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('nav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3')).toBeTruthy();
-    expect(compiled.querySelector('a.navbar-brand').textContent).toContain('Start Bootstrap');
+    expect(compiled.querySelector('a.navbar-brand').textContent).toContain('Pokédex');
     
     const navLinks = compiled.querySelectorAll('ul.navbar-nav.ms-auto.my-2.my-lg-0 li.nav-item a.nav-link');
     expect(navLinks.length).toBe(4);
-    expect(navLinks[0].textContent).toContain('About');
-    expect(navLinks[1].textContent).toContain('Services');
-    expect(navLinks[2].textContent).toContain('Portfolio');
-    expect(navLinks[3].textContent).toContain('Contact');
+    expect(navLinks[0].textContent).toContain('Acerca de');
+    expect(navLinks[1].textContent).toContain('Lista Pokémon (1raGen)');
+    expect(navLinks[2].textContent).toContain('Regiones');
+    expect(navLinks[3].textContent).toContain('Contáctanos');
   });
 });

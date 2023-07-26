@@ -21,9 +21,9 @@ describe('ContactComponent', () => {
   it('should render the correct HTML elements and text', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('section.page-section')).toBeTruthy();
-    expect(compiled.querySelector('h2').textContent).toContain("Let's Get In Touch!");
+    expect(compiled.querySelector('h2').textContent).toContain("¿Necesitas contactarte con nosotros?");
     expect(compiled.querySelector('form#contactForm')).toBeTruthy();
-    expect(compiled.querySelector('label[for="name"]').textContent).toContain('Full name');
+    expect(compiled.querySelector('label[for="name"]').textContent).toContain('Nombre y apellidos');
   });
   it('should have a disabled Submit button initially', () => {
     const compiled = fixture.nativeElement;

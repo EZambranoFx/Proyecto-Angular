@@ -17,12 +17,12 @@ describe('MastheadComponent', () => {
 
   it('should have the correct title', () => {
     const titleElement = fixture.nativeElement.querySelector('h1');
-    expect(titleElement.textContent.trim()).toBe('Encuentra toda la información relacionada a tus Pókemon favoritos en un solo lugar');
+    expect(titleElement.textContent.trim()).toBe('Descubre todo sobre tus Pokémons favoritos en un mismo sitio');
   });
 
   it('should have the correct description', () => {
     const descriptionElement = fixture.nativeElement.querySelector('p');
-    expect(descriptionElement.textContent.trim()).toBe('El sitio ideal que te otorga información recopilada sobre las especies Pokémon. Encuentra todo lo relacionado con los movimientos, habilidades y más información acorde a la PokéDex.');
+    expect(descriptionElement.textContent.trim()).toBe('Consulta y conoce los detalles de los Pokémons disponibles dentro de la Pokédex');
   });
 
   it('should have a link to services section', () => {
@@ -32,7 +32,7 @@ describe('MastheadComponent', () => {
 
   it('should have the correct link text', () => {
     const linkElement = fixture.nativeElement.querySelector('a');
-    expect(linkElement.textContent.trim()).toBe('Descubre más');
+    expect(linkElement.textContent.trim()).toBe('ver Pokédex');
   });
 
 });

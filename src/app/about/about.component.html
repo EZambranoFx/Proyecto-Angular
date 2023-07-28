@@ -2,10 +2,19 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="text-white mt-0">Encuentra tu Pókemon</h2>
-                <hr class="divider divider-light" />
-                <p class="text-white-75 mb-4">Busca un Pókemon por su nombre o con su número de la Pokédex Nacional.</p>
-                <a class="btn btn-light btn-xl" href="#services">¡Empieza ahora!</a>
+                    <h2>Ingresa un Pokem&oacute;n para buscar:</h2><br>
+                    <input type="text" [(ngModel)]="searchedPokemon" placeholder="Ingrese el nombre del Pokémon" class="form-control"><br>
+                    <button (click)="searchPokemon()" class="btn btn-primary btn-xl">Buscar</button><br><br>
+                    
+                    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+                  
+                    <div *ngIf="pokemonData">
+                      <h2>{{ pokemonData.name.toUpperCase() }}</h2>
+                      <img [src]="pokemonData.sprites.front_default" [alt]="pokemonData.name">
+                      <p>Número: {{ pokemonData.id }}</p>
+                      <p>Altura: {{ pokemonData.height / 10 }}m</p>
+                      <p>Peso: {{ pokemonData.weight / 10 }}kg</p>
+                    </div>
             </div>
         </div>
     </div>

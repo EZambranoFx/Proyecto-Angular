@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CalltoactionComponent } from './calltoaction.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 describe('CalltoactionComponent', () => {
   let component: CalltoactionComponent;
@@ -8,6 +9,9 @@ describe('CalltoactionComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CanvasJSAngularChartsModule
+      ],
       declarations: [CalltoactionComponent]
     });
     fixture = TestBed.createComponent(CalltoactionComponent);

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-calltoaction',
   templateUrl: './calltoaction.component.html',
@@ -13,11 +12,11 @@ export class CalltoactionComponent {
     data: [{
       type: "column",
       dataPoints: [
-        { label: "Apple",  y: 10  },
-        { label: "Orange", y: 15  },
-        { label: "Banana", y: 25  },
-        { label: "Mango",  y: 30  },
-        { label: "Grape",  y: 28  }
+        { label: "Mewto",  y: 40 },
+        { label: "Alakazam", y: 60  },
+        { label: "Snorlax", y: 75 },
+        { label: "Dragonite",  y: 80  },
+        { label: "Laprax",  y: 90 }
       ]
     }]                
   };

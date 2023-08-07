@@ -11,10 +11,11 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CalltoactionComponent } from './calltoaction/calltoaction.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 describe('AppComponent', () => {
   beforeEach(async () => await TestBed.configureTestingModule({
-    imports: [RouterTestingModule, HttpClientModule, FormsModule],
+    imports: [RouterTestingModule, HttpClientModule, FormsModule,CanvasJSAngularChartsModule],
     declarations: [AppComponent,
       NavigationComponent,
       MastheadComponent,
